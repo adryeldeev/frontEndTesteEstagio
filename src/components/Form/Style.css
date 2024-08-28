@@ -1,0 +1,39 @@
+.button-salvar {
+    background-color: blue;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100px;
+
+  }
+.button-user{
+    background-color: blue;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 300px;
+
+  }
+.button-edit {
+    background-color: yellow;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .button-default {
+    background-color: red;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  

@@ -1,0 +1,28 @@
+.content_cadastro{
+    width:100%;
+    height: 100%;
+}
+
+
+.content_lista{
+    width:100%;
+    height: 100%;
+    padding-top:70px;
+}
+
+.content_info_table{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.text_descricao{
+    padding-left:5px;
+}
+.content_buttons{
+    display:flex;
+    gap:10px;
+    margin-left:20px;
+}

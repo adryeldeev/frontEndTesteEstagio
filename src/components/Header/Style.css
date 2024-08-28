@@ -1,0 +1,18 @@
+h1{
+    font-size: 38px;
+    color: #000;
+    padding: 10px 0;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  h1:after{
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 2px;
+      
+      background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.8) 20%,rgba(147,184,189,1) 53%,rgba(0,0,0,0.8) 79%,rgba(147,184,189,0) 100%); 
+      background: linear-gradient(left, rgba(147,184,189,0.8) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+    }
