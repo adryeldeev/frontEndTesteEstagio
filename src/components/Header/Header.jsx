@@ -1,10 +1,22 @@
 import React from "react";
-import "./Style.css";
+import { useAuth } from "../../Context/AuthProvider";
+
 const Header = () => {
+  const { auth, setAuth } = useAuth();
+
+  const handleLogout = () => {
+    setAuth({}); // Limpa o estado de autenticação
+  };
+
   return (
-    <header>
-      <h1>Teste</h1>
-    </header>
+    <div>
+      {auth.user ? (
+        <p>Olá, {auth.user.name}!</p>
+      ) : (
+        <p>Você não está autenticado.</p>
+      )}
+      <button onClick={handleLogout}>Sair</button>
+    </div>
   );
 };
 

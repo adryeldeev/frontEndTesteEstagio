@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
-import Index from "../../components/Task/Index";
+import Task from "../../components/Task/Task";
+
 const AtualizarTask = () => {
   return (
     <Fragment>
-      <Index title="Atualizar Tarefa" buttonText="Salvar" />;
+      <Task title="Atualizar Tarefa" buttonText="Salvar" />;
     </Fragment>
   );
 };

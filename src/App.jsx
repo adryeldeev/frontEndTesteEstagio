@@ -1,12 +1,17 @@
+import { ToastContainer } from "react-toastify";
 import "./App.css";
-import Header from "./components/Header/Header";
-import AtualizarTask from "./pages/AtualizarTask/Index";
+import RoutesApp from "./Routes/Routes";
+import { AuthProvider } from "./Context/AuthProvider";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
-      <Header />
-      <AtualizarTask />
+      <AuthProvider>
+        <RoutesApp />
+      </AuthProvider>
+
+      <ToastContainer />
     </>
   );
 }

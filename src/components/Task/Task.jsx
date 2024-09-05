@@ -1,15 +1,30 @@
 import React, { Fragment, useState } from "react";
 import Button from "../Form/Button";
 import "./Style.css";
-const Index = ({ title, buttonText = "Salvar", onSubmit }) => {
-  const [titulo, setTitulo] = useState("");
-  const [descricao, setDescricao] = useState("");
+import { getLocalStorage } from "../../Context/Utils";
+
+const Task = ({ title, buttonText = "Salvar", onSubmit }) => {
+  const user = getLocalStorage();
+  const { id } = user || {};
+
+  const [formData, setFormData] = useState({ titulo: "", descricao: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { titulo, descricao };
-    onSubmit(data);
+
+    const dataWithUserId = { ...formData, userId: id };
+
+    onSubmit(dataWithUserId);
   };
+
   return (
     <Fragment>
       <div className="content_info">
@@ -24,8 +39,9 @@ const Index = ({ title, buttonText = "Salvar", onSubmit }) => {
                 id="titulo"
                 type="text"
                 placeholder="Digite o titulo da tarefa"
-                value={titulo}
-                onChange={(e) => setTitulo(e.target.value)}
+                name="titulo"
+                value={formData.titulo}
+                onChange={handleChange}
               />
             </div>
             <div className="content_input">
@@ -34,8 +50,9 @@ const Index = ({ title, buttonText = "Salvar", onSubmit }) => {
                 id="descricao"
                 type="text"
                 placeholder="Digite a descrição da tarefa"
-                value={descricao}
-                onChange={(e) => setDescricao(e.target.value)}
+                name="descricao"
+                value={formData.descricao}
+                onChange={handleChange}
               />
             </div>
             <div className="button_task">
@@ -48,4 +65,4 @@ const Index = ({ title, buttonText = "Salvar", onSubmit }) => {
   );
 };
 
-export default Index;
+export default Task;

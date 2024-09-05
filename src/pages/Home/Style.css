@@ -1,3 +1,23 @@
+/* Style.css */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
+  .loading-overlay p {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+
 .content_cadastro{
     width:100%;
     height: 100%;

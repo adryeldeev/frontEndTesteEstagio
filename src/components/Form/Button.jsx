@@ -1,7 +1,7 @@
 import React from "react";
 import "./Style.css";
 
-const Button = ({ buttonOne, buttonTwo }) => {
+const Button = ({ buttonOne, buttonTwo, onClick }) => {
   const getButtonClass = (buttonLabel) => {
     if (buttonLabel === "Editar") {
       return "button-edit";
@@ -17,7 +17,9 @@ const Button = ({ buttonOne, buttonTwo }) => {
 
   return (
     <div className="button-container">
-      <button className={getButtonClass(buttonOne)}>{buttonOne}</button>
+      <button className={getButtonClass(buttonOne)} onClick={onClick}>
+        {buttonOne}
+      </button>
       {buttonTwo && (
         <button className={getButtonClass(buttonTwo)}>{buttonTwo}</button>
       )}
