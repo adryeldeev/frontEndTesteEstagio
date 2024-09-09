@@ -1,5 +1,5 @@
 import axios from 'axios';  
-const BASE_URL = 'https://backendtesteestagio.onrender.com';
+const BASE_URL = 'https://backendtesteestagio.onrender.com'
 
 export const Api = axios.create({
     baseURL: BASE_URL
