@@ -28,7 +28,7 @@ const Form = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validação mais robusta
+
     if (!formData.email || !formData.password) {
       toast.error("Preencha todos os campos");
       return;

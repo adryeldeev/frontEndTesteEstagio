@@ -4,7 +4,6 @@ import { getLocalStorage, setLocalStorage } from "./Utils";
 
 const AuthContext = createContext({});
 
-// Provedor do Contexto de Autenticação
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(() => {
     const storedAuth = getLocalStorage();
@@ -24,5 +23,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Hook para usar o contexto
 export const useAuth = () => useContext(AuthContext);

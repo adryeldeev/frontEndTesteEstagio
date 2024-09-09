@@ -7,7 +7,7 @@ const useRefreshToken = () => {
 
   const refresh = async () => {
     const refreshToken = localStorage.getItem("refreshToken");
-    console.log("Refresh token:", refreshToken); // Debug
+    console.log("Refresh token:", refreshToken);
 
     try {
       const response = await Api.post(
@@ -16,13 +16,12 @@ const useRefreshToken = () => {
         { withCredentials: true }
       );
       const { accessToken } = response.data;
-      console.log("New access token:", accessToken); // Debug
+      console.log("New access token:", accessToken);
       setAuth((prev) => ({ ...prev, accessToken }));
       return accessToken;
     } catch (error) {
       console.error("Erro ao atualizar o token:", error);
 
-      // Handle error gracefully, e.g., redirect to login or display a notification
       toast.error("Falha ao atualizar o token. Faça login novamente.");
     }
   };
