@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import "./Form.css";
+import { toast } from "react-toastify";
 
-const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
+const Form = ({
+  title,
+  showName = true,
+  onSubmit,
+  buttonText = "Enviar",
+  texto,
+  onClick,
+  textButton,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,13 +28,17 @@ const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Validação mais robusta
+    if (!formData.email || !formData.password) {
+      toast.error("Preencha todos os campos");
+      return;
+    }
+
     const dataToSubmit = showName
       ? formData
       : { email: formData.email, password: formData.password };
-
     onSubmit(dataToSubmit);
   };
-
   return (
     <div className="content_form">
       <div className="contente_cadastro">
@@ -34,8 +47,9 @@ const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
           <div className="text_cadastro">
             {showName && (
               <div className="input_text">
-                <label htmlFor="name">Nome</label>
+                <label htmlFor="name">Nome:</label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   value={formData.name}
@@ -47,6 +61,7 @@ const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
             <div className="input_text">
               <label htmlFor="email">Email:</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -55,8 +70,9 @@ const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
               />
             </div>
             <div className="input_text">
-              <label htmlFor="password">Senha</label>
+              <label htmlFor="password">Senha:</label>
               <input
+                id="password"
                 type="password"
                 name="password"
                 value={formData.password}
@@ -68,6 +84,9 @@ const Form = ({ title, showName = true, onSubmit, buttonText = "Enviar" }) => {
               <Button buttonOne={buttonText} />
             </div>
           </div>
+          <span>
+            {texto} <button onClick={onClick}>{textButton}</button>
+          </span>
         </form>
       </div>
     </div>

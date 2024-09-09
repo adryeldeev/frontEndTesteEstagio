@@ -25,7 +25,7 @@ axiosPrivate.interceptors.request.use(
 axiosPrivate.interceptors.response.use(
   (response) => response,
   async (error) => {
-    // Lógica para lidar com tokens expirados ou erros
+    
     return Promise.reject(error);
   }
 );

@@ -13,7 +13,7 @@ const Header = () => {
       {auth.user ? (
         <p>Olá, {auth.user.name}!</p>
       ) : (
-        <p>Você não está autenticado.</p>
+        <p>Não tem usuário logado</p>
       )}
       <button onClick={handleLogout}>Sair</button>
     </div>

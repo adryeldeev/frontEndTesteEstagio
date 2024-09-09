@@ -46,3 +46,10 @@
     gap:10px;
     margin-left:20px;
 }
+
+@media screen and (max-width: 500px) {
+    .content_lista_table{
+    max-width: 100%;
+    overflow: scroll;
+    }
+}

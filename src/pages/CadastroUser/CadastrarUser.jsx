@@ -16,7 +16,9 @@ const CadastrarUser = () => {
         console.error("Erro ao cadastrar usuário:", error);
       });
   };
-
+  const handleNavigate = () => {
+    navigate("/login");
+  };
   return (
     <div className="content_cadastro">
       <div className="content_info">
@@ -25,6 +27,9 @@ const CadastrarUser = () => {
           showName={true}
           buttonText="Cadastrar"
           onSubmit={handleSubmit}
+          texto={"Já tem conta?"}
+          onClick={handleNavigate}
+          textButton={"Login"}
         />
       </div>
     </div>

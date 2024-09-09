@@ -34,7 +34,7 @@ h2:after{
     width: 100%;
     align-items: center;
     text-align: center;
-    gap:10px;
+    gap:5px;
     background: rgb(247, 247, 247);
     border: 1px solid rgba(147, 184, 189,0.8);
     height: 300px;
@@ -50,9 +50,21 @@ h2:after{
     flex-direction: column;
    text-align: center;
     justify-content: center;
-    gap: 10px;;
+    gap: 5px;
 }
 input[type="text"]{
+    width: 200px;
+    outline:none;
+    border: none;
+    height: 22px;
+}
+input[type="email"]{
+    width: 200px;
+    outline:none;
+    border: none;
+    height: 22px;
+}
+input[type="password"]{
     width: 200px;
     outline:none;
     border: none;
@@ -74,4 +86,13 @@ label{
     align-items: flex-start;
     color: #405c60;
   position: relative;
+}
+
+button{
+  outline:none;
+  border: none;
+  background-color: #fff;
+  color:#066a75;
+  cursor: pointer;
+  padding:5px;
 }
